@@ -1,15 +1,15 @@
 <hgroup>
-    <h3 class="aligner txtGras">Catalogue des Films</h3>
-    <h4 class="text-muted aligner">DVD - Blu Ray</h4>
+    <h3 class="aligner txtGras">Catalogue des Medicaments</h3>
+    <h4 class="text-muted aligner">Medicaments</h4>
 </hgroup>
 <?php
 
 //récupération des films
-$vue = new FilmDB($cnx);
+$vue = new MedicmentDB($cnx);
 $liste = array();
 $liste = null;
 
-$liste = $vue->getFilm();
+$liste = $vue->getMedicament();
 $nbr = count($liste);
 ?>
 
@@ -27,9 +27,9 @@ $nbr = count($liste);
     <table class="table-responsive">
         <tr>
             <th class="ecart">Id</th>
-            <th class="ecart">Titre</th>
+            <th class="ecart">Nom Medicament</th>
             <th class="ecart">Annee</th>
-            <th class="ecart">Duree</th>
+            <th class="ecart">Concentration</th>
 			<th class="ecart">prix</th>
             <th class="ecart">Stocks</th>
         </tr>
@@ -37,21 +37,21 @@ $nbr = count($liste);
         for ($i = 0; $i < $nbr; $i++) {
             ?>
             <tr>
-                <td class="ecart"><?php print $liste[$i]['id_film']; ?></td>
+                <td class="ecart"><?php print $liste[$i]['id_medicament']; ?></td>
               
-                <td><span contenteditable="true" name="titre" class="ecart" id="<?php print $liste[$i]['id_film']; ?>">
-                        <?php print $liste[$i]['titre']; ?></span>
+                <td><span contenteditable="true" name="titre" class="ecart" id="<?php print $liste[$i]['id_medicament']; ?>">
+                        <?php print $liste[$i]['nom_medicament']; ?></span>
                 </td>
-                <td><span contenteditable="true" name="annee" class="ecart" id="<?php print $liste[$i]['id_film']; ?>">
+                <td><span contenteditable="true" name="annee" class="ecart" id="<?php print $liste[$i]['id_medicament']; ?>">
                         <?php print $liste[$i]['annee']; ?></span>
                 </td>
-                <td><span contenteditable="true" name="duree" class="ecart" id="<?php print $liste[$i]['id_film']; ?>">
-                        <?php print $liste[$i]['duree']; ?></span>
+                <td><span contenteditable="true" name="concentration" class="ecart" id="<?php print $liste[$i]['id_medicament']; ?>">
+                        <?php print $liste[$i]['concentration']; ?></span>
                 </td>
-				<td><span contenteditable="true" name="prix" class="ecart" id="<?php print $liste[$i]['id_film']; ?>">
+				<td><span contenteditable="true" name="prix" class="ecart" id="<?php print $liste[$i]['id_medicament']; ?>">
                         <?php print $liste[$i]['prix']; ?></span>
                 </td>
-                <td><span contenteditable="true" name="stock" class="ecart" id="<?php print $liste[$i]['id_film']; ?>">
+                <td><span contenteditable="true" name="stock" class="ecart" id="<?php print $liste[$i]['id_medicament']; ?>">
                         <?php print $liste[$i]['stock']; ?></span>
                 </td>
             </tr>

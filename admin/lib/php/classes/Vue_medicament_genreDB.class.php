@@ -1,6 +1,6 @@
 <?php
 
-class Vue_film_genreDB {
+class Vue_medicament_genreDB {
 	 private $_db;
     private $_array = array();
     
@@ -8,11 +8,11 @@ class Vue_film_genreDB {
         $this->_db = $db;
     }
     
-	 public function getFilmsByGenre($id_genre) {
+	 public function getMedicamentByGenre($id_genre) {
         print 'coucou';
         try {
             $this->_db->beginTransaction();
-            $query = "select * from vue_film_genre where ref=:id_genre";
+            $query = "select * from vue_medicament_genre where ref=:id_genre";
             $resultset = $this->_db->prepare($query);
             $resultset->bindValue(':id_genre', $id_genre);
             $resultset->execute();
@@ -30,9 +30,9 @@ class Vue_film_genreDB {
         }
     }
 	
-    public function getAllFilms(){
+    public function getAllMedicament(){
         try{
-            $query = "select * from vue_film_genre";
+            $query = "select * from vue_medicament_genre";
             $resultset = $this->_db->prepare($query);
             $resultset->execute();
             while($data = $resultset->fetch()){

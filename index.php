@@ -22,7 +22,33 @@ $cnx = Connexion::getInstance($dsn, $user, $pass);
 		
         <link rel="stylesheet" type="text/css" href="admin/lib/css/style.css"/>
         <link rel="stylesheet" type="text/css" href="admin/lib/css/custom.css"/>
+        <link rel="stylesheet" type="text/css" href="./lib/css/style.css" />
+        <link rel="shortcut icon" type="image/x-icon" href="./admin/images/favicon.ico" />
+        <header>
+		   <nav class="haut">
+			   <p>
+			   
+			     <?php
+				     setlocale(LC_TIME, 'fra_bel');
+			         echo '<span>(lu-ve : 9h à 12h et de 13h30 à 18h) 
+			              ..Livraison rapide à votre domicile & Paiement sécurisé
+			              ..Nous sommes le  '.strftime("%A %d %B %Y"). '..Il est  '.strftime("%H:%M:%S");
+				 ?>
+			   </p>
+		   </nav>
+           
+		     
+	</header>
         <title></title>
+        <header>
+		<tr>
+		  <img src="./admin/images/carr-pharmacie2.jpg" alt="pharma-online" class="img-responsive img-rounded"/></
+		</tr>
+			<p class="titre">PHARMA-ONLINE</p>
+		<nav>
+			<p class="pa">VOTRE PHARMACIE EN LIGNE </P>
+		</nav>	
+	</header>
     </head>
     <body>
         <header>
@@ -58,12 +84,25 @@ $cnx = Connexion::getInstance($dsn, $user, $pass);
                 ?>
             </div>
         </section>
+        <tr>
+		    <td>
+			<!-- 16:9 aspect ratio -->
+             <div class="embed-responsive embed-responsive-16by9">
+              <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/LyqFWY-JYuY" frameborder="0" allowfullscreen"></iframe>
+             </div>
+
+			<!--<iframe width="660" height="530" src="https://www.youtube.com/embed/LyqFWY-JYuY" frameborder="0" allowfullscreen></iframe></td>
+			<td><iframe width="660" height="530" src="https://www.youtube.com/embed/v_lSn_be3Cc" frameborder="0" allowfullscreen></iframe>-->
+			</td>
+		
+	</tr>
         <footer>
             <div class="container text-center" id="footer">
-                Inclure ici la page de footer
+                
 				 <?php
                     if (file_exists("./lib/php/footerPublic.php")) {
                        include ("./lib/php/footerPublic.php");
+					   include ("./lib/php/socialPublic.php");
                             }
                   ?>
             </div>

@@ -1,6 +1,6 @@
 <?php
 
-class Film {
+class Medicament {
 	 private $_attributs = array();
 
     public function __construct(array $data) {

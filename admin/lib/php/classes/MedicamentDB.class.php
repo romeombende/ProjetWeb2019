@@ -1,26 +1,26 @@
 <?php
 
-class FilmDB extends Film{
+class MedicamentDB extends Medicament{
 	 private $_db;
     private $_array = array();
     
     public function __construct($db){//contenu de $cnx (index)
         $this->_db = $db;
     }
-        public function updateFilm($champ, $nouveau, $id) {
+        public function updateMedicament($champ, $nouveau, $id) {
 
         try {
             // PREPARER LA REQUETE COMME VU PRECEDEMMENT
-            $query = "UPDATE film set " . $champ . " = '" . $nouveau . "' where id_film ='" . $id . "'";
+            $query = "UPDATE medicament set " . $champ . " = '" . $nouveau . "' where id_medicament ='" . $id . "'";
             $resultset = $this->_db->prepare($query);
             $resultset->execute();
         } catch (PDOException $e) {
             print $e->getMessage();
         }
     }
-    public function getFilm(){
+    public function getMedicament(){
         try{
-            $query = "select * from film";
+            $query = "select * from medicament";
             $resultset = $this->_db->prepare($query);
             $resultset->execute();
 

@@ -1,6 +1,6 @@
 <hgroup>
-    <h3 class="aligner txtGras">Catalogue des Films</h3>
-    <h4 class="text-muted aligner">Liste des DVD Disponibles..</h4>
+    <h3 class="aligner txtGras">Catalogue de Medicaments</h3>
+    <h4 class="text-muted aligner">Medicaments disponibles..</h4>
 </hgroup>
 
 <?php
@@ -10,20 +10,20 @@ $genres = $genre->getGenre();
 $nbr_genre = count($genres);
 
 //récupération des produits
-$vue = new Vue_film_genreDB($cnx);
+$vue = new Vue_medicament_genreDB($cnx);
 
 $liste = array();
 $liste = null;
 //sans filtre de produits
 if (!isset($_GET['submit_choix_type'])) {
-    $liste = $vue->getAllFilms();
+    $liste = $vue->getAllMedicaments();
 }
 //avec filtre si on a fait un choix dans la liste déroulante: 
 else {
     if (isset($_GET['choix_type']) && $_GET['choix_type'] != "") {
-        $liste = $vue->getFilmsByGenre($_GET['choix_type']);
+        $liste = $vue->getMedicamentsByGenre($_GET['choix_type']);
     } else {
-        $liste = $vue->getAllFilms();
+        $liste = $vue->getAllMedicaments();
     }
 }
 ?>
@@ -69,7 +69,7 @@ if ($liste != null) {
                 </div>
                 <div class="col-sm-5 text-center borderBottom">
                     <?php
-                    print "<br/>" . $liste[$i]['titre'] . "<br/><br/>";
+                    print "<br/>" . $liste[$i]['nom_medicament'] . "<br/><br/>";
                     print $liste[$i]['histoire'] . "<br/><br/>";
                     print $liste[$i]['prix'] . " €<br/><br/>";
                     if ($liste[$i]['stock'] > 0) {
@@ -82,7 +82,7 @@ if ($liste != null) {
                     ?>
 					<p>
 					  <br/>
-					  <a href="index.php?page=client.php&id_film=<?php print $liste[$i]['id_film'];?> " > 
+					  <a href="index.php?page=client.php&id_medicament=<?php print $liste[$i]['id_medicament'];?> " > 
 						Acheter
 					  </a>
 					</p>

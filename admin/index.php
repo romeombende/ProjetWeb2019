@@ -16,8 +16,8 @@ $cnx = Connexion::getInstance($dsn, $user, $pass);
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-		<script src='admin/lib/js/jquery.editable.js'></script>
-		<script src='admin/lib/js/fonctionsJquery.js'></script>
+		<script src='lib/js/jquery.editable.js'></script>
+		<script src='lib/js/fonctionsJquery.js'></script>
 		
         <link rel="stylesheet" type="text/css" href="admin/lib/css/style.css"/>
         <link rel="stylesheet" type="text/css" href="admin/lib/css/custom.css"/>
@@ -58,8 +58,14 @@ $cnx = Connexion::getInstance($dsn, $user, $pass);
             </div>
         </section>
         <footer>
-            <div class="container">
+             <div class="container text-center" id="footer">
                 
+				 <?php
+                    if (file_exists("./lib/php/footerPublic.php")) {
+                       include ("./lib/php/footerPublic.php");
+					   include ("./lib/php/socialPublic.php");
+                            }
+                  ?>
             </div>
         </footer>
 

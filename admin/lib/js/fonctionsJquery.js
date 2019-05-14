@@ -34,7 +34,7 @@
                     type: 'GET',
                     data: parametre,
                     dataType: "text",
-                    url: "./admin/lib/php/ajax/ajaxUpdateFilm.php",
+                    url: "./lib/php/ajax/ajaxUpdateFilm.php",
                     success: function (data) {
                        //rien de particulier à faire
                         console.log("success");

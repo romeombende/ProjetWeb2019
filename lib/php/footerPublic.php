@@ -1,6 +1,8 @@
 
 	<div class="container text-center text-danger">
-		Editeur responsable admin@allocine.com
+		<footer>
+			2019 Copyright PHARMA-ONLINE - Tous droits réservés
+		</footer>
 		
 	</div>
 
