@@ -25,17 +25,7 @@ $cnx = Connexion::getInstance($dsn, $user, $pass);
         <link rel="stylesheet" type="text/css" href="./lib/css/style.css" />
         <link rel="shortcut icon" type="image/x-icon" href="./admin/images/favicon.ico" />
         <header>
-		   <nav class="haut">
-			   <p>
-			   
-			     <?php
-				     setlocale(LC_TIME, 'fra_bel');
-			         echo '<span>(lu-ve : 9h à 12h et de 13h30 à 18h) 
-			              ..Livraison rapide à votre domicile & Paiement sécurisé
-			              ..Nous sommes le  '.strftime("%A %d %B %Y"). '..Il est  '.strftime("%H:%M:%S");
-				 ?>
-			   </p>
-		   </nav>
+		   
            
 		     
 	</header>
@@ -47,7 +37,18 @@ $cnx = Connexion::getInstance($dsn, $user, $pass);
 			<p class="titre">PHARMA-ONLINE</p>
 		<nav>
 			<p class="pa">VOTRE PHARMACIE EN LIGNE </P>
-		</nav>	
+		</nav>
+                        <nav class="haut">
+			   <p>
+			   
+			     <?php
+				     setlocale(LC_TIME, 'fra_bel');
+			         echo '<span>(lu-ve : 9h à 12h et de 13h30 à 18h) 
+			              ..Livraison rapide à votre domicile & Paiement sécurisé
+			              ..Nous sommes le  '.strftime("%A %d %B %Y"). '..Il est  '.strftime("%H:%M:%S");
+				 ?>
+			   </p>
+		   </nav>
 	</header>
     </head>
     <body>

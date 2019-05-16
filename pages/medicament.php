@@ -16,14 +16,14 @@ $liste = array();
 $liste = null;
 //sans filtre de produits
 if (!isset($_GET['submit_choix_type'])) {
-    $liste = $vue->getAllMedicaments();
+    $liste = $vue->getAllMedicament();
 }
 //avec filtre si on a fait un choix dans la liste déroulante: 
 else {
     if (isset($_GET['choix_type']) && $_GET['choix_type'] != "") {
-        $liste = $vue->getMedicamentsByGenre($_GET['choix_type']);
+        $liste = $vue->getMedicamentByGenre($_GET['choix_type']);
     } else {
-        $liste = $vue->getAllMedicaments();
+        $liste = $vue->getAllMedicament();
     }
 }
 ?>
@@ -70,7 +70,7 @@ if ($liste != null) {
                 <div class="col-sm-5 text-center borderBottom">
                     <?php
                     print "<br/>" . $liste[$i]['nom_medicament'] . "<br/><br/>";
-                    print $liste[$i]['histoire'] . "<br/><br/>";
+                    //print $liste[$i]['histoire'] . "<br/><br/>";
                     print $liste[$i]['prix'] . " €<br/><br/>";
                     if ($liste[$i]['stock'] > 0) {
                         print "Il reste " . $liste[$i]['stock'] . " exemplaire";

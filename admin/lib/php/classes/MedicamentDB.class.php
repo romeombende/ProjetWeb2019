@@ -23,7 +23,25 @@ class MedicamentDB extends Medicament{
             $query = "select * from medicament";
             $resultset = $this->_db->prepare($query);
             $resultset->execute();
-
+            while($data = $resultset->fetch()){
+                $_array[] = $data;
+            }    
+        }
+        catch(PDOException $e){
+            print $e->getMessage(); 
+        }
+        if(!empty($_array)){
+            return $_array;
+        }
+        else {
+            return null;
+        }
+    }
+     public function getAllMedicament(){
+        try{
+            $query = "select * from vue_medicament_genre";
+            $resultset = $this->_db->prepare($query);
+            $resultset->execute();
             while($data = $resultset->fetch()){
                 $_array[] = $data;
             }   

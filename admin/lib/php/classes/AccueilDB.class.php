@@ -10,7 +10,7 @@ class AccueilDB extends Accueil {
     
     public function getTexteAccueil(){
         try{
-            $query = "select * from vue_fleur";
+            $query = "select * from vue_medicament_genre";
             $resultset = $this->_db->prepare($query);
             $resultset->execute();
 

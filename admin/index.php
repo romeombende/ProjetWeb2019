@@ -21,10 +21,32 @@ $cnx = Connexion::getInstance($dsn, $user, $pass);
 		
         <link rel="stylesheet" type="text/css" href="admin/lib/css/style.css"/>
         <link rel="stylesheet" type="text/css" href="admin/lib/css/custom.css"/>
+        <link rel="stylesheet" type="text/css" href="../lib/css/style.css" />
+        <link rel="shortcut icon" type="image/x-icon" href="images/favicon.ico" />
         <title></title>
     </head>
     <body>
         <header>
+           <header>
+		<tr>
+		  <img src="images/carr-pharmacie2.jpg" alt="pharma-online" class="img-responsive img-rounded"/></
+		</tr>
+			<p class="titre">PHARMA-ONLINE</p>
+		<nav>
+			<p class="pa">VOTRE PHARMACIE EN LIGNE </P>
+		</nav>
+                        <nav class="haut">
+			   <p>
+			   
+			     <?php
+				     setlocale(LC_TIME, 'fra_bel');
+			         echo '<span>(lu-ve : 9h à 12h et de 13h30 à 18h) 
+			              ..Livraison rapide à votre domicile & Paiement sécurisé
+			              ..Nous sommes le  '.strftime("%A %d %B %Y"). '..Il est  '.strftime("%H:%M:%S");
+				 ?>
+			   </p>
+		   </nav>
+	</header>
             <div class="container">
                 <?php
                 if(file_exists('./lib/php/a_menu.php')){
@@ -35,6 +57,7 @@ $cnx = Connexion::getInstance($dsn, $user, $pass);
                     <a href="index.php?page=disconnect.php">Déconnexion</a>
                 </div>
             </div>
+            
         </header>
         <section id="main">
             <div class="container">

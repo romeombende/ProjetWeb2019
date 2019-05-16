@@ -10,8 +10,7 @@
     </button>
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <a href="" class="navbar-brand collapse navbar-collapse">
-            <img src="./images/full_logo2.png" alt="DigitArt" class="topLogo"/>          
+        <a href="" class="navbar-brand collapse navbar-collapse">          
         </a>
        
         <!--
@@ -32,7 +31,7 @@
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Film
+                    Pharmacie
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="./index.php?page=catalogue.php">Catalogue</a>

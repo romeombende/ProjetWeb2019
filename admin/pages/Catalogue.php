@@ -4,8 +4,8 @@
 </hgroup>
 <?php
 
-//récupération des films
-$vue = new MedicmentDB($cnx);
+//récupération des medicaments
+$vue = new MedicamentDB($cnx);
 $liste = array();
 $liste = null;
 
