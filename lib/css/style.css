@@ -25,6 +25,7 @@ h2
 	background-color: white;
 	margin:-20px;
 	font-size: 18px;
+        background-image: linear-gradient(rgba(0, 0, 255, 0.5), rgba(255, 255, 0, 0.5));
 }
 
 footer
@@ -67,13 +68,64 @@ body
 {
 	position: relative;
 	color: black;
-	font-family: "Agency FB", Arial, sans-serif;
+	font-family:  cursive;
 	font-weight:bold;
-	background-image:url(../../images/diapo-pilon_1600_600.png);
+	
 }
 nav a:hover
 {
 	background-color: #ffd52c;
 	color: #191919;
 }
-
+p {
+  margin-top: 0px;
+}
+ 
+fieldset {
+  margin-bottom: 15px;
+  padding: 10px;
+}
+ 
+legend {
+  padding: 0px 3px;
+  font-weight: bold;
+  font-variant: small-caps;
+}
+ 
+label {
+  width: 110px;
+  display: inline-block;
+  vertical-align: top;
+  margin: 6px;
+}
+ 
+em {
+  font-weight: bold;
+  font-style: normal;
+  color: #f00;
+}
+ 
+input:focus {
+  background: #eaeaea;
+}
+ 
+input, textarea {
+  width: 249px;
+}
+ 
+textarea {
+  height: 100px;
+}
+ 
+select {
+  width: 254px;
+}
+ 
+input[type=checkbox] {
+  width: 10px;
+}
+ 
+input[type=submit] {
+  width: 150px;
+  padding: 10px;
+}

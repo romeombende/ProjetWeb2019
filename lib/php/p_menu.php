@@ -41,7 +41,7 @@
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="./index.php?page=medicament.php">Catalogue de Medicaments</a>
-                    <a class="dropdown-item" href="./index.php?page=jquery1.php">Jquery</a>
+                   
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="./index.php?page=annonces.php">Annonces</a>
                 </div>

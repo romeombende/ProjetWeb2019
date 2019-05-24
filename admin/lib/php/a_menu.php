@@ -2,7 +2,7 @@
 
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <img src="./images/logo.png" alt="logo"/>
-        <img src="./images/porteeNoireRouge.png" alt="logoPortee"/>&nbsp;    
+        <!--<img src="./images/porteeNoireRouge.png" alt="logoPortee"/>&nbsp;  -->  
         <span class="navbar-toggler-icon"></span>&nbsp;
         <a href="index.php?page=disconnect.php" class="black font-weight-bold">
             <i class="fas fa-sign-out-alt"></i> <!-- ou autre icône -->
@@ -35,13 +35,13 @@
                 </a>
                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="./index.php?page=catalogue.php">Catalogue</a>
-                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="./index.php?page=commande.php">Commande</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">Something else here</a>
+                    <a class="dropdown-item" href="#"></a>
                 </div>
             </li>
             <li class="nav-item">
-                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true"></a>
             </li>
         </ul>
 </nav>

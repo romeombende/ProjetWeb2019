@@ -104,5 +104,56 @@
 		
 		
 	});
+	///////////////////////////////////
+        	$('#password').blur(function () {
+        email1 = $('#email').val();
+        password = $('#password').val();
+        if (($.trim(email1) != '' && $.trim(email2 != '')) && $.trim(password != '')) {
+            
+            var recherche = "email=" + email1 + "&password=" + password; 
+            			
+            $.ajax({
+                type: 'GET',
+                data: recherche,
+                dataType: "json",
+                url: './admin/lib/php/ajax/ajaxRechercheCommand.php',
+                success: function (data) { // retourné par le fichier php
+                    $('#quantite').val(1);
+                    $('#id_client').val(data[0].id_client);
+                    $('#id_medicament').val(data[0].id_medicament);
+                    console.log(data[0].adresse);
+                }
+            });
+           
+        }
+    });
+	
+		
+		$('#submit_choix_type').remove();
+		$('#choix_type').change(function(){
+			var param = $(this).attr('name');
+			var val = $(this).val();
+			var refresh = 'index.php?'+param+'='+val+'&submit_choix_type=1';
+			location.href = refresh;
+			
+		});
+		
+		
+		//les tests
+		$('#parag1').css('color','#FF0000');
+		
+		$('#parag2').css({
+			"background-color" : "lightcyan",
+			"font-size" : "120%"
+		});
+		
+		/* deux actions sur la fonction click qui change la couleur du paragraphe 1 puis la taille de la police du paragraphe 2*/
+		$("#parag1").click(function(){
+			$(this).css('color','#0000FF');
+			$("#parag2").css('font-size','80%');
+		});
+		
+		
+
 	
 	

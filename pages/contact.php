@@ -1,11 +1,43 @@
 <link rel="stylesheet" type="text/css" href="../lib/css/style.css" />
 <div class="saisie">
+    <?php
+if (isset($_GET['contacter'])) {
+    extract($_GET, EXTR_OVERWRITE);
+
+    if (empty($email1) || empty($nom) || empty($prenom) || empty($telephone) || empty($adresse) || empty($numero) || empty($codepostal) || empty($localite)) {
+        $erreur = "<span class='txtRouge txtGras'>Veuillez remplir tous les champs</span>";
+    } else {
+        $cl = new ContactDB($cnx);
+        //$retour = $cl->addClient($_GET);
+        $retour = $cl->addContact($_GET);
+        if ($retour == 1) {
+           // $commande = new CommandeDAO($cnx);
+           // $ret = $commande->AjoutCommande($_GET['id_medicament'],2);
+
+            print "<br/ >Insertion effectuée!";
+        } else if ($retour == 2) {
+         //  $commande = new CommandeDAO($cnx);
+         //  $ret = $commande->AjoutCommande($_GET['id_medicament'],2);
+
+            print "Deja encodé!";
+        }
+        //var_dump($_GET);
+    }
+}
+
+$ok = 0;
+
+
+    ?>
+    
 
 <nav>
-		    <p>Nous contacter</p>
-		</nav>
+    <form action="<?php print $_SERVER['PHP_SELF']; ?>" method="get" id="form_contact">
+        
+<!--		   
 		
-		<form method= "POST" action= "Nousconctacter.php" >
+		
+		
 			<table>
 				<tr>
 					<td><label for="nom">Nom : </label></td>
@@ -39,9 +71,47 @@
 					<td><input type="reset" name="reset" value="annuler"></td>
 				    <td><input type="submit" name="envoyer" value="envoyer"></td>>
 				</tr>
-			</table>		
-		</form>
-		<h1>Qui sommes nous ?&nbsp;&nbsp;<a href="afficher_clients.php">Nos client ?</a></h1>
+			</table>
+                    -->
+                    <h2>Nous contacter</h2>
+
+  
+       <fieldset>
+           <legend>Contact</legend>
+           <label for="nom">Nom <em>*</em></label>
+           <input id="nom" placeholder="Olivier Serre" autofocus="" required=""><br>
+           <label for="telephone">Portable</label>
+           <input id="telephone" type="tel" placeholder="06xxxxxxxx" pattern="06[0-9]{8}"><br>
+           <label for="email">Email <em>*</em></label>
+           <input id="email" type="email" placeholder="prenom.nom@polytechnique.edu" required="" pattern="[a-zA-Z]*.[a-zA-Z]*@polytechnique.edu"><br>
+       </fieldset>
+       <fieldset>
+           <legend>Information personnelles</legend>
+           <label for="age">Age<em>*</em></label>
+           <input id="age" type="number" placeholder="xx" pattern="[0-9]{2}" required=""><br>
+           <label for="sexe">Sexe</label>
+           <select id="sexe">
+                 <option value="F" name="sexe">Femme</option>
+                 <option value="H" name="sexe">Homme</option>
+           </select><br>
+           <label for="comment">Pourquoi vous nous contacter ?</label>
+           <textarea id="comment"></textarea>
+       </fieldset>
+ 
+       <fieldset>
+          <legend>Veuillez Choisir</legend>
+          <label for="mecontentement"><input id="mecontent" type="checkbox" name="binet" value="mecontentement"> Mecontent</label>
+          <label for="Appreciation"><input id="apprecier" type="checkbox" name="binet" value="appreciation"> Apprecier</label>
+       </fieldset>
+       <p>
+       <input type="hidden" name="id_contact" value="<?php print $_GET['id_contact']; ?>"/>
+            <input type="submit" name="contact" id="contacter" value="contacter" class="pull-right"/>&nbsp;           
+            <input type="reset" id="reset" value="Annuler" class="pull-left"/>
+       </p>
+    </form>
+    
+		
+		<h1>Qui sommes nous ?&nbsp</h1>
 		<p> 
         
           <strong>Pharmaonline</strong> est le département Online de la Pharmacie,officine ouverte au public.<br/>
@@ -70,5 +140,4 @@
 		</p>
                 
 		
-</div>
-<br />
+</div> 

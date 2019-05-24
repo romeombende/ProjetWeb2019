@@ -82,7 +82,7 @@ if ($liste != null) {
                     ?>
 					<p>
 					  <br/>
-					  <a href="index.php?page=client.php&id_medicament=<?php print $liste[$i]['id_medicament'];?> " > 
+					  <a href="index.php?page=client.php&id_medicament=<?php echo $liste[$i]['id_medicament'];?>" > 
 						Acheter
 					  </a>
 					</p>
